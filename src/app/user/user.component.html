@@ -1,0 +1,26 @@
+<div>
+  <table class="table table-bordered table-sm">
+    <thead class="thead-dark">
+      <tr>
+        <th>Id</th>
+        <th>Employee Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Id</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users">
+        <td>{{u.Id}}</td>
+        <td>{{u.EmployeeId}}</td>
+        <td>{{u.FirstName}}</td>
+        <td>{{u.LastName}}</td>
+        <td>{{u.EmailId}}</td>
+        <td><button type="button" class="btn btn-info btn-block btn-sm">Edit</button></td>
+        <td><button type="button" class="btn btn-danger btn-block btn-sm" (click)="removeUser(u.Id)">Remove</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

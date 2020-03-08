@@ -1,0 +1,69 @@
+<!-- <p>
+  equity-share-list works!
+</p> -->
+<!-- <div *ngFor="let u of shareArray">
+  <span>{{u.ShareName}}</span>
+</div> -->
+<!-- <mat-table>
+    .... columns definitions
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table> -->
+  <div fxLayout fxLayoutAlign="center center">
+     
+        <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
+
+    </div>
+<div>
+  <table mat-table [dataSource]="shareArray" matSort>
+    <ng-container matColumnDef="ShareID">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ShareID </th>
+      <td mat-cell *matCellDef="let element"> {{element.ShareID}} </td>
+    </ng-container>
+    <ng-container matColumnDef="ShareCode">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ShareCode </th>
+      <td mat-cell *matCellDef="let element"> {{element.ShareCode}} </td>
+    </ng-container>
+    <ng-container matColumnDef="ShareName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ShareName </th>
+      <td mat-cell *matCellDef="let element"> {{element.ShareName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="StockExchange">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> StockExchange </th>
+      <td mat-cell *matCellDef="let element"> {{element.StockExchange}} </td>
+    </ng-container>
+    <ng-container matColumnDef="TransactionDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> TransactionDate </th>
+      <td mat-cell *matCellDef="let element"> {{element.TransactionDate}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Quantity">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </th>
+      <td mat-cell *matCellDef="let element"> {{element.Quantity}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Rate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Rate </th>
+      <td mat-cell *matCellDef="let element"> {{element.Rate}} </td>
+    </ng-container>
+    <ng-container matColumnDef="TotalAmount">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> TotalAmount </th>
+      <td mat-cell *matCellDef="let element"> {{element.TotalAmount}} </td>
+    </ng-container>
+    <ng-container matColumnDef="TotalCharge">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> TotalCharge </th>
+      <td mat-cell *matCellDef="let element"> {{element.TotalCharge}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+      <td mat-cell *matCellDef="let element"> {{element.Action}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Remark">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Remark </th>
+      <td mat-cell *matCellDef="let element"> {{element.Remark}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSize]="10" [pageSizeOptions]="[10, 20]">
+    </mat-paginator>
+</div>

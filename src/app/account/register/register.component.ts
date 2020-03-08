@@ -7,7 +7,7 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private renderer: Renderer2) { 
+  constructor(private renderer: Renderer2) {
     this.renderer.addClass(document.body, 'bg-dark');
   }
 

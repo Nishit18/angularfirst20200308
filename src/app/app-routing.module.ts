@@ -9,6 +9,8 @@ import { AfterLayoutComponent } from './layout/after-layout/after-layout.compone
 import { BlankComponent } from './common/blank/blank.component';
 import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 import { UserComponent } from './user/user.component';
+import { EquityShareComponent } from './investment/equity-share/equity-share.component';
+import { EquityShareListComponent } from './investment/equity-share-list/equity-share-list.component';
 
 // const routes: Routes = [];
 const routes: Routes = [
@@ -16,14 +18,16 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
 
-  { 
+  {
     path: '',
-    component: AfterLayoutComponent, 
+    component: AfterLayoutComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'blank', component: BlankComponent },
       { path: 'page-not-found', component: PageNotFoundComponent },
-      { path: 'user', component: UserComponent }
+      { path: 'user', component: UserComponent },
+      { path: 'equity-share', component: EquityShareComponent },
+      { path: 'equity-share-list', component: EquityShareListComponent }
     ]
   },
 

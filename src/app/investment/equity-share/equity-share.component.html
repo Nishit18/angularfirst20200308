@@ -1,0 +1,72 @@
+<form>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Share Code</span>
+    </div>
+    <input type="text" class="form-control" maxlength="30" [(ngModel)]="ShareCode" name="ShareCode">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" maxlength="100">Share Name</span>
+    </div>
+    <input type="text" class="form-control" maxlength="100" [(ngModel)]="ShareName" name="ShareName">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Stock Exchange</span>
+    </div>
+    <select class="form-control" [(ngModel)]="StockExchange" name="StockExchange">
+      <option value="NSE">NSE</option>
+      <option value="BSE">BSE</option>>
+    </select>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Transaction Date</span>
+    </div>
+    <input type="date" class="form-control" [(ngModel)]="TransactionDate" name="TransactionDate">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Quantity</span>
+    </div>
+    <input type="number" class="form-control" min="0" max="1000" [(ngModel)]="Quantity" (ngModelChange)="changeTotalAmount()"
+      name="Quantity">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Rate</span>
+    </div>
+    <input type="number" class="form-control" min="0" max="10000000" [(ngModel)]="Rate" (ngModelChange)="changeTotalAmount()"
+      name="Rate">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Total Amount</span>
+    </div>
+    <input type="text" class="form-control" disabled maxlength="18" [(ngModel)]="TotalAmount" name="TotalAmount">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Total Charge</span>
+    </div>
+    <input type="number" class="form-control" min="0" max="1000" [(ngModel)]="TotalCharge" name="TotalCharge">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Action</span>
+    </div>
+    <select class="form-control" [(ngModel)]="Action" name="Action">
+      <option value="BUY">BUY</option>
+      <option value="SELL">SELL</option>>
+    </select>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" maxlength="100">Remark</span>
+    </div>
+    <input type="text" class="form-control" [(ngModel)]="Remark" name="Remark">
+  </div>
+  <!-- <button type="submit" class="btn btn-primary" style="margin-bottom: 15px">Submit</button> -->
+  <button type="button" class="btn btn-primary" style="margin-bottom: 15px" (click)="saveEquityShare()">Submit</button>
+</form>

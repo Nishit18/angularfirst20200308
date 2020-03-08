@@ -1,26 +1,78 @@
-<div>
-  <table class="table table-bordered table-sm">
-    <thead class="thead-dark">
-      <tr>
-        <th>Id</th>
-        <th>Employee Id</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Email Id</th>
-        <th>Edit</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let u of users">
-        <td>{{u.Id}}</td>
-        <td>{{u.EmployeeId}}</td>
-        <td>{{u.FirstName}}</td>
-        <td>{{u.LastName}}</td>
-        <td>{{u.EmailId}}</td>
-        <td><button type="button" class="btn btn-info btn-block btn-sm">Edit</button></td>
-        <td><button type="button" class="btn btn-danger btn-block btn-sm" (click)="removeUser(u.Id)">Remove</button></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="row user-bottom-marging">
+  <div class="col-lg-1">
+    <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#myModal">Add</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <table class="table table-bordered table-sm">
+      <thead class="thead-dark">
+        <tr>
+          <th>Id</th>
+          <th>Employee Id</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email Id</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let u of users">
+          <td>{{u.Id}}</td>
+          <td>{{u.EmployeeId}}</td>
+          <td>{{u.FirstName}}</td>
+          <td>{{u.LastName}}</td>
+          <td>{{u.EmailId}}</td>
+          <td><button type="button" class="btn btn-info btn-block btn-sm">Edit</button></td>
+          <td><button type="button" class="btn btn-danger btn-block btn-sm" (click)="removeUser(u.Id)">Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add User Information</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="usr">First Name : </label>
+          <input type="text" class="form-control" id="firstName" [(ngModel)]="firstName">
+        </div>
+        <div class="form-group">
+          <label for="usr">Last Name : </label>
+          <input type="text" class="form-control" id="lastName" [(ngModel)]="lastName">
+        </div>
+        <div class="form-group">
+          <label for="usr">Email Address : </label>
+          <input type="text" class="form-control" id="emailAddress" [(ngModel)]="emailAddress">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password :</label>
+          <input type="password" class="form-control" id="pwd" [(ngModel)]="pwd">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Confirm Password :</label>
+          <input type="password" class="form-control" id="confirmPwd" [(ngModel)]="confirmPwd">
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="addUser()">Add</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
 </div>

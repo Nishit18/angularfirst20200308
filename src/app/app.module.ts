@@ -1,5 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material';
+import { MatPaginatorModule, MatSortModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +17,10 @@ import { BlankComponent } from './common/blank/blank.component';
 import { PageNotFoundComponent } from './common/page-not-found/page-not-found.component';
 import { UserComponent } from './user/user.component';
 
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import { EquityShareComponent } from './investment/equity-share/equity-share.component';
+import { EquityShareListComponent } from './investment/equity-share-list/equity-share-list.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -24,12 +32,19 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     BlankComponent,
     PageNotFoundComponent,
-    UserComponent
+    UserComponent,
+    EquityShareComponent,
+    EquityShareListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
